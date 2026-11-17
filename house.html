@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Canvas Drawing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            background-color: #ffffff;
+            border: 2px solid #333333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="houseCanvas" width="600" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('houseCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set line styles to match a hand-drawn marker look
+        ctx.strokeStyle = '#2c3e50';
+        ctx.lineWidth = 4;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        // 1. Draw the Main House Body (Rectangle)
+        // x: 100, y: 220, width: 400, height: 300
+        ctx.beginPath();
+        ctx.rect(100, 220, 400, 300);
+        ctx.stroke();
+
+        // 2. Draw the Roof (Triangle)
+        // Peak at (300, 70), bottom corners at (100, 220) and (500, 220)
+        ctx.beginPath();
+        ctx.moveTo(100, 220);
+        ctx.lineTo(300, 70);
+        ctx.lineTo(500, 220);
+        ctx.stroke();
+
+        // 3. Draw Left Window (Square)
+        ctx.beginPath();
+        ctx.rect(140, 260, 100, 100);
+        ctx.stroke();
+
+        // 4. Draw Right Window (Square)
+        ctx.beginPath();
+        ctx.rect(360, 260, 100, 100);
+        ctx.stroke();
+
+        // 5. Draw the Door (Rectangle)
+        ctx.beginPath();
+        ctx.rect(245, 370, 110, 150);
+        ctx.stroke();
+
+        // 6. Draw the Doorknob (Small vertical oval/circle)
+        ctx.beginPath();
+        ctx.arc(265, 445, 8, 0, Math.PI * 2);
+        ctx.stroke();
+
+        
+
+    </script>
+</body>
+</html>

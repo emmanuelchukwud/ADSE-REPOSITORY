@@ -1,0 +1,274 @@
+
+				STYLE.CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+h1 {
+    font-size: 50px;
+    padding: 10px 0;
+    animation: head 1s linear;
+}
+
+@keyframes head {
+    0% {
+        transform: translateX(-400px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Navigation */
+.navbar {
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #230202;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: aqua;
+    animation: logo 3s linear infinite;
+}
+
+@keyframes logo {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(1.3);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    transform: translateY(-4px);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Button */
+.play-btn {
+    padding: 18px 35px;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: translateY(-4px) scale(1.05) rotate(2deg);
+}
+
+span {
+    display: block;
+    color: #666;
+}
+span:hover {
+    transform: translateX(10px);
+}
+.game-btn:hover {
+    background-color: red;
+    color: thistle;
+}
+
+/* Card Layout */
+.games {
+    padding: 80px 8%;
+    background: #111;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.game-card {
+    background: #181818;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    text-align: center;
+
+    /* Make Cards move */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.zombie-card {
+    transform: scale(1.07);
+}
+
+.game-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Reaction */
+.game-image {
+    font-size: 80px;
+    text-align: center;
+    transition: transform 0.5s ease;
+}
+
+/* When .game-card is hovered, transform its .game-image */
+.game-card:hover .game-image {
+    transform: scale(1.3) rotate(10deg);
+}
+
+/* Style the boxes */
+.transform-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 50px 8%;
+}
+
+.transform-box {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    border: 1px solid #444;
+    transition: transform 0.5s ease;
+}
+
+.translate-box:hover {
+    transform: translateY(-20px);
+}
+
+.scale-box:hover {
+    transform: scale(1.15);
+}
+
+.rotate-box:hover {
+    animation: rot 1.5s linear infinite;
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.skew-box:hover {
+    transform: skew(-10deg);
+}
+
+/* .hero-controller {
+    width: auto;
+    padding: auto auto;
+} */
+
+/* Animation */
+.controller {
+    font-size: 150px;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Loading Spinner */
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #333;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+/* Spinner Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.race-card > .game-image {
+    animation: game 1s linear infinite;
+}
+.space-card > .game-image {
+    animation: game 0.4s ease-out infinite;
+}
+.zombie-card > .game-image {
+    animation: game 3s ease-in-out infinite;
+}
+
+
+@keyframes game {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

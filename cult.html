@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing of a house, two stick figures holding hands, and three birds flying in the background</title>
+</head>
+
+<body>
+    <script>
+        const canvas = document.getElementById('whiteboardCanvas');
+const ctx = canvas.getContext('2d');
+
+// --- BACKGROUND & WHITEBOARD ---
+// Base whiteboard surface
+ctx.fillStyle = '#f4f6f9';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// Slight gradient reflection simulation on the board
+let reflection = ctx.createLinearGradient(100, 100, 300, 250);
+reflection.addColorStop(0, 'rgba(255, 255, 255, 0.4)');
+reflection.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
+ctx.fillStyle = reflection;
+ctx.fillRect(50, 50, 300, 200);
+
+// Setup marker style (gray/black whiteboard marker style)
+ctx.strokeStyle = '#4A4E51';
+ctx.lineWidth = 4;
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+
+// --- THE HOUSE ---
+// Main base structure (square body)
+ctx.beginPath();
+ctx.moveTo(400, 250);
+ctx.lineTo(850, 280);
+ctx.lineTo(830, 770);
+ctx.lineTo(415, 715);
+ctx.closePath();
+ctx.stroke();
+
+// Triangular Roof
+ctx.beginPath();
+ctx.moveTo(400, 250);
+ctx.lineTo(620, 100);
+ctx.lineTo(850, 280);
+ctx.stroke();
+
+// Left Window
+ctx.beginPath();
+ctx.moveTo(450, 310);
+ctx.lineTo(560, 320);
+ctx.lineTo(555, 430);
+ctx.lineTo(450, 420);
+ctx.closePath();
+ctx.stroke();
+
+// Right Window
+ctx.beginPath();
+ctx.moveTo(705, 335);
+ctx.lineTo(815, 345);
+ctx.lineTo(810, 455);
+ctx.lineTo(700, 445);
+ctx.closePath();
+ctx.stroke();
+
+// Front Door
+ctx.beginPath();
+ctx.moveTo(590, 505);
+ctx.lineTo(695, 515);
+ctx.lineTo(685, 750);
+ctx.lineTo(585, 735);
+ctx.closePath();
+ctx.stroke();
+
+// Doorknob (Oval shape on the left side of the door)
+ctx.beginPath();
+ctx.arc(605, 620, 10, 0, Math.PI * 2);
+ctx.stroke();
+
+
+// --- TWO STICKMEN HOLDING HANDS ---
+// Left Stickman Head
+ctx.beginPath();
+ctx.arc(150, 440, 25, 0, Math.PI * 2);
+ctx.stroke();
+
+// Left Stickman Body
+ctx.beginPath();
+ctx.moveTo(150, 465);
+ctx.lineTo(150, 570);
+ctx.stroke();
+
+// Left Stickman Left Arm
+ctx.beginPath();
+ctx.moveTo(150, 490);
+ctx.lineTo(110, 540);
+ctx.stroke();
+
+// Left Stickman Right Arm (Reaching out to hold hands)
+ctx.beginPath();
+ctx.moveTo(150, 490);
+ctx.lineTo(210, 510);
+ctx.stroke();
+
+// Left Stickman Left Leg
+ctx.beginPath();
+ctx.moveTo(150, 570);
+ctx.lineTo(120, 640);
+ctx.stroke();
+
+// Left Stickman Right Leg
+ctx.beginPath();
+ctx.moveTo(150, 570);
+ctx.lineTo(180, 640);
+ctx.stroke();
+
+
+// Right Stickman Head
+ctx.beginPath();
+ctx.arc(285, 455, 23, 0, Math.PI * 2);
+ctx.stroke();
+
+// Right Stickman Body
+ctx.beginPath();
+ctx.moveTo(285, 478);
+ctx.lineTo(285, 575);
+ctx.stroke();
+
+// Right Stickman Left Arm (Holding hands with left stickman)
+ctx.beginPath();
+ctx.moveTo(285, 500);
+ctx.lineTo(210, 510);
+ctx.stroke();
+
+// Right Stickman Right Arm
+ctx.beginPath();
+ctx.moveTo(285, 500);
+ctx.lineTo(320, 550);
+ctx.stroke();
+
+// Right Stickman Left Leg
+ctx.beginPath();
+ctx.moveTo(285, 575);
+ctx.lineTo(250, 645);
+ctx.stroke();
+
+// Right Stickman Right Leg
+ctx.beginPath();
+ctx.moveTo(285, 575);
+ctx.lineTo(315, 645);
+ctx.stroke();
+
+
+// --- THREE FAINT BIRDS IN THE BACKGROUND ---
+// Using a lighter, thinner stroke to match the faint erased marker texture
+ctx.strokeStyle = 'rgba(90, 95, 100, 0.4)';
+ctx.lineWidth = 2;
+
+// Bird 1 (Leftmost bird above the stickmen)
+ctx.beginPath();
+ctx.moveTo(280, 160);
+ctx.quadraticCurveTo(295, 140, 310, 165);
+ctx.quadraticCurveTo(325, 142, 340, 162);
+ctx.stroke();
+
+// Bird 2 (Middle bird)
+ctx.beginPath();
+ctx.moveTo(330, 180);
+ctx.quadraticCurveTo(342, 163, 355, 185);
+ctx.quadraticCurveTo(368, 166, 380, 182);
+ctx.stroke();
+
+// Bird 3 (Rightmost bird)
+ctx.beginPath();
+ctx.moveTo(375, 195);
+ctx.quadraticCurveTo(385, 180, 395, 198);
+ctx.quadraticCurveTo(405, 182, 415, 195);
+ctx.stroke();
+    </script>
+    
+</body>
+</html>
